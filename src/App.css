@@ -19,9 +19,21 @@
   display: inline-block;
   margin-right: 30px;
   font-size: 20px;
-  border-bottom: 5px solid transparent;
+  border-bottom: 3px solid transparent;
 }
 
 .AppContent {
   margin: 0 30px;
+}
+
+.AppNavItem a {
+  cursor: pointer;
+}
+
+.AppNavItem a:hover {
+  color: #999;
+}
+
+.AppNavItem.selected {
+  border-bottom-color: gold;
 }

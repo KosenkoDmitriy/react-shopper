@@ -3,16 +3,28 @@ import Nav from './Nav';
 import './App.css';
 
 class App extends Component {
+  state = {
+    tab: 0
+  };
+
+  handleTabChange = (id) => {
+    this.setState({
+      tab: id
+    });
+  }
+
   renderContent() {
-    return (
-      <span>Empty</span>
-    );
+    switch(this.state.tab) {
+      default:
+      case 0: return <span>Products</span>;
+      case 1: return <span>Shopping Cart</span>
+    }
   }
 
   render() {
     return (
       <div className="App">
-        <Nav/>
+        <Nav activeTab={this.state.tab} onTabChange={this.handleTabChange} />
         <main className="AppContent">
           {this.renderContent()}
         </main>
