@@ -18,12 +18,6 @@ class App extends Component {
     });
   }
 
-  handleAddToShoppingCart = (product) => {
-    this.setState({
-      cart: [...this.state.cart, product.id]
-    });
-  }
-
   renderContent() {
     switch(this.state.tab) {
       default:
@@ -32,6 +26,22 @@ class App extends Component {
       case 1:
         return this.renderShoppingCart();
     }
+  }
+
+  handleAddToShoppingCart = (product) => {
+    this.setState({
+      cart: [...this.state.cart, product.id]
+    });
+  }
+
+  handleDeleteFromCart = (item) => {
+    let index = this.state.cart.indexOf(item.id);
+    this.setState({
+      cart: [
+        ...this.state.cart.slice(0, index),
+        ...this.state.cart.slice(index + 1)
+      ]
+    });
   }
 
   renderShoppingCart() {
@@ -48,7 +58,7 @@ class App extends Component {
     });
 
     return (
-      <ShoppingCartPage products={cartItems} />
+      <ShoppingCartPage products={cartItems} onAdd={this.handleAddToShoppingCart} onDelete={this.handleDeleteFromCart} />
     );
   }
 

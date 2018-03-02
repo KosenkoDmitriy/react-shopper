@@ -1,0 +1,22 @@
+.ShoppingCartPageProducts {
+  margin: 0;
+  padding: 0;
+}
+.ShoppingCartPageProducts li {
+  list-style: none;
+}
+.ShoppingCartCount {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+}
+.ShoppingCartBtnDelete, .ShoppingCartBtnAdd {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  background: #fff;
+}
+.ShoppingCartBtnAdd {
+  border-left: none;
+}
+.ShoppingCartBtnDelete {
+  border-right: none;
+}
