@@ -12,6 +12,8 @@ const Product = ({ product, onAddToShoppingCart }) => (
       <div className="ProductText">
         {product.text}
       </div>
+    </div>
+    <div className="ProductRight">
       <div className="ProductCost">
         {product.cost}
       </div>

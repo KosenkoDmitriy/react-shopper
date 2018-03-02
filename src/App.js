@@ -38,7 +38,6 @@ class App extends Component {
     // }
     return (
       <div className="App">
-      // {this.state.cart.length} products
         <Nav activeTab={this.state.tab} onTabChange={this.handleTabChange} />
         <main className="AppContent">
           {this.renderContent()}
