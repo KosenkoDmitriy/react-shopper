@@ -1,0 +1,9 @@
+.ProductsPageItems {
+  margin: 0;
+  padding: 0;
+}
+
+.ProductsPageItems li {
+  list-style: none;
+  margin-bottom: 15px;
+}
