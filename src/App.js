@@ -38,7 +38,7 @@ class App extends Component {
     // counting all items, inside shopping cart
     let productCounts = this.state.cart.reduce((productCounts, productId) => {
       productCounts[productId] = productCounts[productId] || 0;
-      productCounts[productId]+=1;
+      productCounts[productId]++;
       return productCounts;
     }, {});
     // array of items
