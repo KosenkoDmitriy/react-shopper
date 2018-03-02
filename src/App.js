@@ -6,7 +6,8 @@ import { products } from './data';
 
 class App extends Component {
   state = {
-    tab: 0
+    tab: 0,
+    cart: []
   };
 
   handleTabChange = (id) => {
@@ -15,10 +16,16 @@ class App extends Component {
     });
   }
 
+  handleAddToShoppingCart = (product) => {
+    this.setState({
+      cart: [...this.state.cart, product.id]
+    });
+  }
+
   renderContent() {
     switch(this.state.tab) {
       default:
-      case 0: return <ProductsPage products={products} />;
+      case 0: return <ProductsPage products={products} onAddToShoppingCart={this.handleAddToShoppingCart} />;
       case 1: return <span>Shopping Cart</span>;
     }
   }
@@ -31,6 +38,7 @@ class App extends Component {
     // }
     return (
       <div className="App">
+      // {this.state.cart.length} products
         <Nav activeTab={this.state.tab} onTabChange={this.handleTabChange} />
         <main className="AppContent">
           {this.renderContent()}
