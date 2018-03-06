@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Product from './Product';
 import './ShoppingCartPage.css';
-import Total from './Total.js';
+import { Total } from './Total.js';
 
 function ShoppingCartPage({ products, onAdd, onDelete }) {
   // console.log("sc products:", products);

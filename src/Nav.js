@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import {TotalCountAndCost} from './Total';
 
 class NavLink extends Component {
   handleClick = () => {
@@ -25,6 +25,13 @@ const Nav = ({ activeTab, onTabChange }) => {
       </li>
       <li className={`AppNavItem ${activeTab === 1 && 'selected'}`}>
         <NavLink id={1} onClick={onTabChange}>Shopping Cart</NavLink>
+      </li>
+      <li className={`AppNavItem ${activeTab === 1 && 'selected'}`}>
+        <NavLink id={1} onClick={onTabChange}>
+          <span className="fa-cart">
+            <TotalCountAndCost />
+          </span>
+        </NavLink>
       </li>
     </ul>
   </nav>
