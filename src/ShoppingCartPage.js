@@ -9,6 +9,7 @@ function ShoppingCartPage({ products, onAdd, onDelete }) {
   return (
     <ul className="ShoppingCartPageProducts">
       {
+        products.length > 0 ?
         products.map(
         product =>
           <li key={product.id} className="ShoppingCartPageProduct">
@@ -20,7 +21,11 @@ function ShoppingCartPage({ products, onAdd, onDelete }) {
               </div>
             </Product>
           </li>
-      )}
+      ) :
+      <div className="ShoppingCartMessage">
+        Your Cart is Empty. Please add some desired products to it.
+      </div>
+    }
       <li className="ShoppingCartPageTotal"><Total products={ products } /></li>
     </ul>
   );
