@@ -15,7 +15,7 @@ const Product = ({ product, children }) => (
     </div>
     <div className="ProductRight">
       <div className="ProductCost">
-        {product.cost}
+        ${product.cost}
       </div>
       {children}
     </div>

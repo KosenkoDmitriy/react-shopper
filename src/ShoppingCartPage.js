@@ -2,12 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Product from './Product';
 import './ShoppingCartPage.css';
+import Total from './Total.js';
 
 function ShoppingCartPage({ products, onAdd, onDelete }) {
   // console.log("sc products:", products);
   return (
     <ul className="ShoppingCartPageProducts">
-      {products.map(
+      {
+        products.map(
         product =>
           <li key={product.id} className="ShoppingCartPageProduct">
             <Product product={product}>
@@ -19,6 +21,7 @@ function ShoppingCartPage({ products, onAdd, onDelete }) {
             </Product>
           </li>
       )}
+      <li className="ShoppingCartPageTotal"><Total products={ products } /></li>
     </ul>
   );
 }

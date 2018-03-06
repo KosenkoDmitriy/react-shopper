@@ -20,3 +20,9 @@
 .ShoppingCartBtnDelete {
   border-right: none;
 }
+.ShoppingCartPageTotal {
+  font-weight: bold;
+  text-align: right;
+  padding: 10px;
+  font-size: 1.5em;
+}
