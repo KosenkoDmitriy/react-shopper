@@ -22,7 +22,10 @@ Total.propTypes = {
 };
 function TotalCountAndCost() {
   return (
-    <span className="">{totalCount === 1 ? "item" : "items"} ${totalCost}</span>
+    <div>
+    <i className="fa fa-shopping-cart" aria-hidden="true"></i>
+    <span> {totalCount} {totalCount === 1 ? "item" : "items"} ${totalCost}</span>
+    </div>
   );
 }
 export {Total, TotalCountAndCost};
