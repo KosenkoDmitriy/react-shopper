@@ -9,7 +9,9 @@ import ShoppingCartPage from './ShoppingCartPage';
 class App extends Component {
   state = {
     tab: 0,
-    cart: []
+    cart: [],
+    cartTotalCount: 0,
+    cartTotalCost: 0,
   };
 
   handleTabChange = (id) => {
@@ -22,7 +24,9 @@ class App extends Component {
     switch(this.state.tab) {
       default:
       case 0:
-        return <ProductsPage products={products} onAddToShoppingCart={this.handleAddToShoppingCart} />;
+        return <ProductsPage
+            products={products}
+            onAddToShoppingCart={this.handleAddToShoppingCart} />;
       case 1:
         return this.renderShoppingCart();
     }
@@ -30,17 +34,21 @@ class App extends Component {
 
   handleAddToShoppingCart = (product) => {
     this.setState({
-      cart: [...this.state.cart, product.id]
+      cart: [...this.state.cart, product.id],
+      cartTotalCost: this.state.cartTotalCost + product.cost,
+      cartTotalCount: this.state.cartTotalCount + 1
     });
   }
 
-  handleDeleteFromCart = (item) => {
-    let index = this.state.cart.indexOf(item.id);
+  handleDeleteFromCart = (product) => {
+    let index = this.state.cart.indexOf(product.id);
     this.setState({
       cart: [
         ...this.state.cart.slice(0, index),
         ...this.state.cart.slice(index + 1)
-      ]
+      ],
+      cartTotalCost: this.state.cartTotalCost - product.cost,
+      cartTotalCount: this.state.cartTotalCount - 1
     });
   }
 
@@ -69,7 +77,12 @@ class App extends Component {
     // }
     return (
       <div className="App">
-        <Nav activeTab={this.state.tab} onTabChange={this.handleTabChange} />
+        <Nav activeTab={this.state.tab} onTabChange={this.handleTabChange}>
+          <div>
+            <i className="fa fa-shopping-cart" aria-hidden="true"></i>
+            <span> {this.state.cartTotalCount} {this.state.cartTotalCount === 1 ? "item" : "items"} ${this.state.cartTotalCost}</span>
+          </div>
+        </Nav>
         <main className="AppContent">
           {this.renderContent()}
         </main>

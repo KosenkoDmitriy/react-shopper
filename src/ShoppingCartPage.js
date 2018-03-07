@@ -26,7 +26,9 @@ function ShoppingCartPage({ products, onAdd, onDelete }) {
         Your Cart is Empty. Please add some desired products to it.
       </div>
     }
-      <li className="ShoppingCartPageTotal"><Total products={ products } /></li>
+      <li className="ShoppingCartPageTotal">
+        <Total products={ products } />
+      </li>
     </ul>
   );
 }

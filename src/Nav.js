@@ -15,7 +15,7 @@ class NavLink extends Component {
   }
 }
 
-const Nav = ({ activeTab, onTabChange }) => {
+const Nav = ({ activeTab, onTabChange, children }) => {
   // console.log("activeTab: ", activeTab, " onTabChange: ", onTabChange);
   return (
   <nav className="AppNav">
@@ -28,9 +28,7 @@ const Nav = ({ activeTab, onTabChange }) => {
       </li>
       <li className={`AppNavItemCart`}>
         <NavLink id={2} onClick={onTabChange}>
-          <span className="fa-cart">
-            <TotalCountAndCost />
-          </span>
+          {children}
         </NavLink>
       </li>
     </ul>
