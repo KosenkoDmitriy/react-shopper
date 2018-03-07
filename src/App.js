@@ -81,10 +81,7 @@ class App extends Component {
     return (
       <div className="App">
         <Nav activeTab={this.state.tab} onTabChange={this.handleTabChange}>
-          <div>
-            <i className="fa fa-shopping-cart" aria-hidden="true"></i>
-            <span> {this.state.cartTotalCount} {this.state.cartTotalCount === 1 ? "item" : "items"} ${this.state.cartTotalCost}</span>
-          </div>
+          <span><i className="fa fa-shopping-cart" aria-hidden="true"></i> {this.state.cartTotalCount} {this.state.cartTotalCount === 1 ? "item" : "items"} ${this.state.cartTotalCost}</span>
         </Nav>
         <main className="AppContent">
           {this.renderContent()}

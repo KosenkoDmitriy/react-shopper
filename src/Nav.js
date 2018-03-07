@@ -25,7 +25,7 @@ const Nav = ({ activeTab, onTabChange, children }) => {
       <li className={`AppNavItem ${activeTab === 1 && 'selected'}`}>
         <NavLink id={1} onClick={onTabChange}>Shopping Cart</NavLink>
       </li>
-      <li className={`AppNavItemCart`}>
+      <li className={`AppNavItem ShoppingCart`}>
         <NavLink id={2} onClick={onTabChange}>
           {children}
         </NavLink>
