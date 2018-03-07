@@ -66,7 +66,10 @@ class App extends Component {
     });
 
     return (
-      <ShoppingCartPage products={cartItems} onAdd={this.handleAddToShoppingCart} onDelete={this.handleDeleteFromCart} />
+      <ShoppingCartPage products={cartItems}
+        onAdd={this.handleAddToShoppingCart} onDelete={this.handleDeleteFromCart} >
+          <span className="">Total: ${ this.state.cartTotalCost }</span>
+      </ShoppingCartPage>
     );
   }
 

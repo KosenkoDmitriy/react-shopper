@@ -2,9 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Product from './Product';
 import './ShoppingCartPage.css';
-import { Total } from './Total.js';
 
-function ShoppingCartPage({ products, onAdd, onDelete }) {
+function ShoppingCartPage({ products, onAdd, onDelete, children }) {
   // console.log("sc products:", products);
   return (
     <ul className="ShoppingCartPageProducts">
@@ -27,7 +26,7 @@ function ShoppingCartPage({ products, onAdd, onDelete }) {
       </div>
     }
       <li className="ShoppingCartPageTotal">
-        <Total products={ products } />
+        { children }
       </li>
     </ul>
   );
