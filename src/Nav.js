@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { TotalCountAndCost } from './Total';
 
 class NavLink extends Component {
   handleClick = () => {
